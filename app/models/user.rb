@@ -9,6 +9,7 @@ class User < ApplicationRecord
   before_validation :normalize_email
   after_create :save_username
   has_many :actors
+  has_many :comments, dependent: :destroy
 
   def normalize_email
     self.email.downcase!

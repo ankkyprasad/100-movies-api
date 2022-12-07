@@ -5,4 +5,5 @@ class Movie < ApplicationRecord
   validates :runtime, presence: true
   has_many :casts
   has_many :actors, through: :casts
+  has_many :comments, dependent: :destroy
 end

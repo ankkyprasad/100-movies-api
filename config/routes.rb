@@ -22,6 +22,7 @@ Rails.application.routes.draw do
           get :casts
         end
       end
+      jsonapi_resources :comments, only: %i[index update create delete]
     end
   end
 end
